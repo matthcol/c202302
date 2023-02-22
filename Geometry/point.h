@@ -4,7 +4,8 @@
 typedef struct _Point {
     double x;
     double y;
-    char *name;
+    //char *name;
+    char name[10];
 } Point, *Point_ptr;
 
 void initPoint(Point_ptr p_pt, double x, double y, char *name);

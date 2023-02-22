@@ -2,11 +2,12 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 void initPoint(Point_ptr p_pt, double x, double y, char *name) {
     p_pt->x = x;
     p_pt->y = y;
-    p_pt->name = name;
+    strcpy(p_pt->name,name);
 }
 
 Point_ptr newPoint(double x, double y, char *name){
