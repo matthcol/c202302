@@ -1,16 +1,16 @@
-APP = geo
+APP = geoportable
 OBJS = main.o
 INCLUDEDIR=$(INSTALLDIR)/include
 LIBDIR=$(INSTALLDIR)/lib
+LIBSTATIC=$(LIBDIR)/libgeo.a 
 CFLAGS += -g1 -O0 -std=c99
-LDFLAGS += -lgeo
+LDFLAGS += -lm
 CC = gcc
-
 
 all: $(APP)
 
 $(APP): $(OBJS)
-	$(CC) -o $@ $^ -L $(LIBDIR) $(LDFLAGS)
+	$(CC) -o $@ $^ $(LIBSTATIC) $(LDFLAGS)
 
 %.o: %.c
 	$(CC) -c $(CFLAGS) -I $(INCLUDEDIR) -o $@ $<
