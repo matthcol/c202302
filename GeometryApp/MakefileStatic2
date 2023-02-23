@@ -1,17 +1,16 @@
-# Makefile for application linked with static lib
-APP = geoportable
+# Makefile for application linked with all static lib (geo + libc)
+APP = geoportable2
 OBJS = main.o
 INCLUDEDIR=$(INSTALLDIR)/include
 LIBDIR=$(INSTALLDIR)/lib
-LIBSTATIC=$(LIBDIR)/libgeo.a 
 CFLAGS += -g1 -O0 -std=c99
-LDFLAGS += -lm
+LDFLAGS += -static -lgeo -lm
 CC = gcc
 
 all: $(APP)
 
 $(APP): $(OBJS)
-	$(CC) -o $@ $^ $(LIBSTATIC) $(LDFLAGS)
+	$(CC) -o $@ $^ -L $(LIBDIR) $(LDFLAGS)
 
 %.o: %.c
 	$(CC) -c $(CFLAGS) -I $(INCLUDEDIR) -o $@ $<

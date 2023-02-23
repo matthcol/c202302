@@ -1,0 +1,13 @@
+*.o
+*.h
+*.a
+*.so
+*.dll
+*.exe
+*.out
+.vscode/
+.project
+.settings/
+autom4te.cache/
+build/
+bin/

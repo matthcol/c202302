@@ -14,6 +14,17 @@ Vector_ptr vectorNew(size_t capacity) {
     return p_vector;
 }
 
+void vectorDestroy(Vector_ptr p_vector){
+    free(p_vector->_data);
+    p_vector->_data = NULL;
+}
+
+void vectorDestroyAndFree(Vector_ptr *p_p_vector) {
+    vectorDestroy(*p_p_vector);
+    free(*p_p_vector);
+    *p_p_vector = NULL;
+}
+
 VectorIterator vectorBegin(Vector_ptr p_vector) {
     return p_vector->_data;
 }

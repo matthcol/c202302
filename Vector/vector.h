@@ -3,6 +3,8 @@
 
 #include <stdlib.h>
 
+#define _CAPACITY_DELTA 10
+
 typedef struct {
     size_t _size;
     size_t _capacity;
@@ -13,6 +15,8 @@ typedef double* VectorIterator;
 
 void vectorInit(Vector_ptr p_vector, size_t capacity);
 Vector_ptr vectorNew(size_t capacity);
+void vectorDestroy(Vector_ptr p_vector);
+void vectorDestroyAndFree(Vector_ptr *p_p_vector);
 
 VectorIterator vectorBegin(Vector_ptr p_vector);
 VectorIterator vectorEnd(Vector_ptr p_vector);
@@ -24,9 +28,6 @@ void vectorAppend(Vector_ptr p_vector, double value);
 void vectorExtend(Vector_ptr p_vectorDest, Vector_ptr p_vectorSrc);
 size_t vectorFind(Vector_ptr p_vector, double value);
 VectorIterator vectorFindIt(VectorIterator first, VectorIterator last, double value);
-
-
-#define _CAPACITY_DELTA 10
 
 #endif // !_VECTOR#define _VECTOR
 
