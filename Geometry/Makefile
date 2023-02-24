@@ -1,11 +1,12 @@
 OBJS = point.o main.o
 CFLAGS += -g1 -O0 -std=c99
-# LDFLAGS +=  <flags pour la phase de link>
+LDFLAGS += -lm
+CC = gcc
 
 all: geo
 
 geo: $(OBJS)
-	$(CC) $(LDFLAGS) -o $@ $^
+	$(CC) -o $@ $^ $(LDFLAGS)
 
 %.o: %.c
 	$(CC) -c $(CFLAGS) -o $@ $<
@@ -15,3 +16,6 @@ point.o: point.h
 
 clean:
 	rm -f geo $(OBJS)
+
+version:
+	$(CC) --version

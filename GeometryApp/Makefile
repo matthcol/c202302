@@ -1,3 +1,4 @@
+# Makefile for application linked with dynamic lib
 APP = geo
 OBJS = main.o
 INCLUDEDIR=$(INSTALLDIR)/include
