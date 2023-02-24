@@ -11,5 +11,6 @@ _Bool isWeatherOkRealBool();
 void playWithStrings();
 void playWithSwap();
 void playWithFind();
+void playWithMachines();
 
 #endif // !_PLAYGROUND

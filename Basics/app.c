@@ -22,6 +22,7 @@ int main(int argc, char *argv[], char *arge[]){
     // playWithStrings();
     // playWithSwap();
 
-    playWithFind();   
+    // playWithFind();   
+    playWithMachines();
     return 0;
 }

@@ -1,5 +1,5 @@
 APP=app
-OBJS = utils.o playground.o arrays.o app.o
+OBJS = utils.o playground.o arrays.o unions.o app.o
 CFLAGS += -g1 -O0
 # LDFLAGS += -lm
 CC = gcc

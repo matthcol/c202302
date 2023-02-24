@@ -9,6 +9,7 @@
 
 #include "utils.h"
 #include "arrays.h"
+#include "unions.h"
 
 
 void playWithInts() {
@@ -104,4 +105,32 @@ void playWithFind() {
             p_found += 1;
         }
     } while (p_found != NULL);
+}
+
+
+void playWithMachines() {
+    uint8_t ipv4a[] = {192,168,56,101};
+    uint16_t ipv6b[] = {0xfe80,0x0,0x0,0x0,0x237b,0x430e, 0xdc05, 0xdc05};
+    char name[] = "myserver.myfarm.org";
+
+    machine_t m1;
+    memcpy(m1.ipv4, ipv4a, 4); 
+
+    machine_t m2;
+    memcpy(m2.ipv6, ipv6b, 16);
+
+    machine_t m3;
+    strcpy(m3.name, name); 
+
+    displayMachine(m1, M_IPV4);
+    displayMachine(m2, M_IPV6);
+    displayMachine(m3, M_NAME);
+
+    printf("\n");
+    // wrong usage
+    displayMachine(m1, M_IPV4);
+    displayMachine(m2, M_IPV6);
+    displayMachine(m1, M_NAME);
+
+    printf("\nSize type machine_t: %d\n", sizeof(machine_t));
 }
