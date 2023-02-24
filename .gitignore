@@ -1,5 +1,4 @@
 *.o
-*.h
 *.a
 *.so
 *.dll
@@ -11,3 +10,4 @@
 autom4te.cache/
 build/
 bin/
+__pycache__/
