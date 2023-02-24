@@ -1,0 +1,23 @@
+LIBD = libplg.so
+HEADER = plg.h
+OBJS = plg.o
+CFLAGS += -g1 -O0
+LDFLAGS += -shared
+CC = gcc
+
+all: $(LIBD)
+
+$(LIBD): $(OBJS)
+	$(CC) -o $@ $^ $(LDFLAGS)
+
+%.o: %.c
+	$(CC) -c $(CFLAGS) -o $@ $<
+
+mylib.o: mylib.h
+
+clean:
+	rm -f $(LIBD) $(OBJS)
+
+install: $(LIBD)
+	cp $(LIBD) $(INSTALLDIR)/lib/
+	cp $(HEADER) $(INSTALLDIR)/include/
