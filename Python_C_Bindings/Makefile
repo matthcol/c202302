@@ -1,7 +1,7 @@
 LIBD = libplg.so
 HEADER = plg.h
 OBJS = plg.o
-CFLAGS += -g1 -O0
+CFLAGS += -g0 -O2
 LDFLAGS += -shared
 CC = gcc
 
